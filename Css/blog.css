@@ -1,3 +1,83 @@
+/* Pages Submenu Styles for Blog Page */
+.pages-submenu {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  width: 320px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  padding: 25px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 1300;
+}
+
+.pages-submenu.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.pages-submenu h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+  border-bottom: 2px solid #b3d146;
+  padding-bottom: 10px;
+}
+
+.pages-submenu ul {
+  list-style: none;
+}
+
+.pages-submenu li {
+  margin: 8px 0;
+}
+
+.pages-submenu a {
+  display: block;
+  padding: 12px 20px;
+  color: #555;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  border-left: 3px solid transparent;
+}
+
+.pages-submenu a:hover {
+  background: #f0f7e6;
+  color: #b3d146;
+  border-left-color: #b3d146;
+  padding-left: 25px;
+}
+
+.submenu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 1250;
+}
+
+.submenu-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
 /* Blog Page Styling */
 body.blog-page {
   padding-top: 0;
@@ -1047,7 +1127,9 @@ body.blog-page .nav-links li a.active {
     position: relative;
   }
 
-  .nav-links {
+  header .nav-links,
+  .navbar .nav-links,
+  nav .nav-links {
     position: fixed;
     top: 0;
     right: -100%;
@@ -1062,7 +1144,7 @@ body.blog-page .nav-links li a.active {
     transition: right 0.3s ease;
     z-index: 1000;
     box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-    display: flex !important;
+    display: flex;
   }
 
   .nav-links.active {
@@ -1205,31 +1287,6 @@ body.blog-page .nav-links li a.active {
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     width: 100%;
     display: block;
-  }
-
-  /* Mega Menu Mobile */
-  .has-mega .mega-menu {
-    position: static;
-    opacity: 1;
-    visibility: visible;
-    background: none;
-    box-shadow: none;
-    margin-top: 10px;
-    width: 100%;
-  }
-
-  .mega-inner {
-    flex-direction: column;
-    gap: 20px;
-    padding: 0;
-  }
-
-  .mega-col {
-    width: 100%;
-  }
-
-  .mega-divider {
-    display: none;
   }
 
   /* Hero Section Mobile */
