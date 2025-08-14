@@ -43,6 +43,18 @@ document.addEventListener("DOMContentLoaded", () => {
       // Prevent body scroll when menu is open
       document.body.style.overflow = isActive ? 'hidden' : '';
 
+      // Close mega menu when closing mobile nav
+      if (!isActive) {
+        const megaMenu = document.querySelector('.mega-menu');
+        if (megaMenu) {
+          megaMenu.classList.remove('open');
+          const megaTrigger = document.querySelector('.mega-trigger');
+          if (megaTrigger) {
+            megaTrigger.setAttribute('aria-expanded', 'false');
+          }
+        }
+      }
+
       // Animate hamburger bars
       const bars = toggle.querySelectorAll('.bar');
       if (isActive) {
@@ -60,17 +72,26 @@ document.addEventListener("DOMContentLoaded", () => {
     // Close mobile menu when clicking on links
     navLinks.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-        toggle.classList.remove('active');
-        toggle.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
+        // Don't close if it's the mega trigger
+        if (!link.classList.contains('mega-trigger')) {
+          navLinks.classList.remove('active');
+          toggle.classList.remove('active');
+          toggle.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
 
-        // Reset hamburger animation
-        const bars = toggle.querySelectorAll('.bar');
-        bars.forEach(bar => {
-          bar.style.transform = '';
-          bar.style.opacity = '';
-        });
+          // Reset hamburger animation
+          const bars = toggle.querySelectorAll('.bar');
+          bars.forEach(bar => {
+            bar.style.transform = '';
+            bar.style.opacity = '';
+          });
+
+          // Also close mega menu if open
+          const megaMenu = document.querySelector('.mega-menu');
+          if (megaMenu) {
+            megaMenu.classList.remove('open');
+          }
+        }
       });
     });
 
@@ -183,6 +204,35 @@ document.addEventListener("DOMContentLoaded", () => {
     const focusable = megaMenu.querySelectorAll('a');
     focusable[focusable.length - 1]?.addEventListener('keydown', (e) => {
       if (e.key === 'Tab' && !e.shiftKey) { closeMega(); }
+    });
+
+    // Close mobile navigation when clicking mega menu links
+    const megaLinks = megaMenu.querySelectorAll('a');
+    megaLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        // Check if we're in mobile view
+        if (window.innerWidth <= 880) {
+          const toggle = document.querySelector('.nav-toggle');
+          const navLinks = document.querySelector('.nav-links');
+
+          if (navLinks && navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
+            toggle.classList.remove('active');
+            toggle.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+
+            // Reset hamburger animation
+            const bars = toggle.querySelectorAll('.bar');
+            bars.forEach(bar => {
+              bar.style.transform = '';
+              bar.style.opacity = '';
+            });
+          }
+
+          // Close mega menu
+          closeMega();
+        }
+      });
     });
   }
 });
