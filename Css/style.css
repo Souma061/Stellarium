@@ -548,6 +548,10 @@ header.scrolled .logo img {
   text-align: center;
   padding: 10px 6px 20px;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .forecast-item img {
@@ -555,21 +559,23 @@ header.scrolled .logo img {
   margin-bottom: 0.55rem;
   transition: transform 0.3s ease;
   cursor: pointer;
+  align-self: center;
 }
 
 .forecast-item img:hover {
   transform: translateY(-5px);
 }
 
-/* Arrow sits between icon and name */
+/* Arrow sits between icon and name - perfectly centered */
 .forecast-item .arrow {
   position: relative;
   display: block;
   width: 92px;
   height: 1px;
   background: #111;
-  margin: 0.75rem auto 0.55rem;
+  margin: 0.75rem 0 0.55rem 0;
   transition: background .35s ease, width .45s ease;
+  align-self: center;
 }
 
 .forecast-item .arrow::before {
@@ -597,7 +603,7 @@ header.scrolled .logo img {
   transition: border-left-color .35s ease;
 }
 
-/* Name */
+/* Name - perfectly centered */
 .forecast-item h3 {
   font-family: 'Playfair Display', serif;
   font-size: 1.15rem;
@@ -605,6 +611,9 @@ header.scrolled .logo img {
   color: #333;
   letter-spacing: 0.5px;
   margin-bottom: 0.3rem;
+  text-align: center;
+  align-self: center;
+  width: 100%;
 }
 
 /* Arrow hover accent */
@@ -621,7 +630,7 @@ header.scrolled .logo img {
   border-left-color: #7f3fbf;
 }
 
-/* Date */
+/* Date - perfectly centered */
 .forecast-item .date {
   font-family: 'Montserrat', sans-serif;
   font-size: 11px;
@@ -630,6 +639,9 @@ header.scrolled .logo img {
   text-transform: uppercase;
   color: black;
   opacity: 0.8;
+  text-align: center;
+  align-self: center;
+  width: 100%;
 }
 
 /* Mobile forecast refinements */
@@ -667,8 +679,9 @@ header.scrolled .logo img {
   }
 
   .forecast-item .arrow {
-    margin-bottom: .4rem;
+    margin: 0.6rem 0 0.4rem 0;
     transform: scale(.9);
+    align-self: center;
   }
 
   .forecast-item .date {
@@ -706,6 +719,8 @@ header.scrolled .logo img {
       .forecast-item .arrow {
         transform: none;
         width: 88px;
+        margin: 0.75rem 0 0.55rem 0;
+        align-self: center;
       }
 
       .forecast-item:hover .arrow {
@@ -1090,13 +1105,63 @@ header.scrolled .logo img {
 
 .blog-excerpt {
   max-width: 480px;
-  margin: 0 auto 50px;
+  margin: 0 auto 20px;
   font-family: 'Montserrat', sans-serif;
   font-size: 13.4px;
   line-height: 1.58;
   color: #222;
   letter-spacing: .25px;
   font-weight: 500;
+}
+
+/* Universal Arrow System for Blog Cards */
+.blog-card .arrow {
+  position: relative;
+  display: block;
+  width: 92px;
+  height: 1px;
+  background: #111;
+  margin: 30px auto;
+  transition: background .35s ease, width .45s ease;
+}
+
+.blog-card .arrow::before {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 7px;
+  height: 7px;
+  background: #111;
+  border-radius: 50%;
+  transition: background .35s ease;
+}
+
+.blog-card .arrow::after {
+  content: '';
+  position: absolute;
+  right: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-left: 8px solid #111;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  transition: border-left-color .35s ease;
+}
+
+/* Blog Card Arrow Hover Effects */
+.blog-card:hover .arrow {
+  background: #7f3fbf;
+  width: 106px;
+}
+
+.blog-card:hover .arrow::before {
+  background: #7f3fbf;
+}
+
+.blog-card:hover .arrow::after {
+  border-left-color: #7f3fbf;
 }
 
 /* View More CTA */
@@ -1143,87 +1208,6 @@ header.scrolled .logo img {
 .blog-view-more:focus-visible {
   outline: none;
   color: #7f3fbf;
-}
-
-/* Read more line w/ dot & arrow */
-.blog-readmore {
-  text-decoration: none;
-  display: inline-block;
-  position: relative;
-  height: 16px;
-  width: 120px;
-}
-
-.rm {
-  position: relative;
-  display: inline-block;
-  width: 100%;
-  height: 100%;
-}
-
-.rm-dot {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 5px;
-  height: 5px;
-  background: #000;
-  border-radius: 50%;
-  transition: background .3s ease;
-}
-
-.rm-bar {
-  position: absolute;
-  left: 14px;
-  right: 30px;
-  top: 50%;
-  height: 1px;
-  background: #000;
-  transform: translateY(-50%);
-  transition: width .35s ease, right .35s ease;
-}
-
-.rm-arrow {
-  position: absolute;
-  right: 0;
-  top: 50%;
-  width: 18px;
-  height: 1px;
-  background: #000;
-  transform: translateY(-50%);
-}
-
-.rm-arrow:after {
-  content: '';
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  border-left: 6px solid #000;
-  border-top: 4px solid transparent;
-  border-bottom: 4px solid transparent;
-}
-
-/* Hover effect */
-.blog-card:hover .rm-bar {
-  right: 40px;
-}
-
-.blog-card:hover .rm-dot {
-  background: #7f3fbf;
-}
-
-.blog-card:hover .rm-arrow,
-.blog-card:hover .rm-arrow:after {
-  background: #7f3fbf;
-  border-left-color: #7f3fbf;
-}
-
-/* Accessibility focus */
-.blog-readmore:focus-visible .rm-dot {
-  outline: 2px solid #7f3fbf;
-  outline-offset: 3px;
 }
 
 @media (max-width:1350px) {
@@ -1297,6 +1281,16 @@ header.scrolled .logo img {
   .blog-header {
     margin-bottom: 90px;
   }
+
+  /* Responsive arrow sizing for mobile */
+  .blog-card .arrow {
+    width: 80px;
+    margin: 25px auto;
+  }
+
+  .blog-card:hover .arrow {
+    width: 92px;
+  }
 }
 
 @media (max-width:640px) {
@@ -1321,6 +1315,16 @@ header.scrolled .logo img {
   .blog-excerpt {
     font-size: 12.5px;
   }
+
+  /* Smaller arrow on mobile */
+  .blog-card .arrow {
+    width: 70px;
+    margin: 20px auto;
+  }
+
+  .blog-card:hover .arrow {
+    width: 80px;
+  }
 }
 
 /* ================= Follow Us Section ================= */
@@ -1344,6 +1348,9 @@ header.scrolled .logo img {
   height: auto;
   display: block;
   margin: 0 auto 140px;
+  /* Performance optimizations */
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 .follow-title {
@@ -1428,9 +1435,176 @@ header.scrolled .logo img {
   border-left-color: #7f3fbf;
 }
 
-@media (max-width:1100px) {
+/* Social List and Button Base Styles */
+.social-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 45px;
+  flex-wrap: wrap;
+}
+
+.social-btn {
+  width: 110px;
+  height: 110px;
+  border: 2px solid #161616;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #161616;
+  text-decoration: none;
+  position: relative;
+  font-size: 0;
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  overflow: hidden;
+}
+
+.social-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: #161616;
+  border-radius: 50%;
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.social-btn svg {
+  width: 42px;
+  height: 42px;
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.social-btn:hover {
+  border-color: #7f3fbf;
+  color: #fff;
+  transform: translateY(-8px) scale(1.1);
+  box-shadow: 0 15px 35px rgba(127, 63, 191, 0.3);
+}
+
+.social-btn:hover::before {
+  width: 120%;
+  height: 120%;
+  background: #7f3fbf;
+}
+
+.social-btn:focus-visible {
+  outline: 3px solid #7f3fbf;
+  outline-offset: 6px;
+}
+
+/* Individual social platform colors */
+.social-btn.twitter:hover {
+  border-color: #1da1f2;
+  box-shadow: 0 15px 35px rgba(29, 161, 242, 0.3);
+}
+
+.social-btn.twitter:hover::before {
+  background: #1da1f2;
+}
+
+.social-btn.facebook:hover {
+  border-color: #4267b2;
+  box-shadow: 0 15px 35px rgba(66, 103, 178, 0.3);
+}
+
+.social-btn.facebook:hover::before {
+  background: #4267b2;
+}
+
+.social-btn.youtube:hover {
+  border-color: #ff0000;
+  box-shadow: 0 15px 35px rgba(255, 0, 0, 0.3);
+}
+
+.social-btn.youtube:hover::before {
+  background: #ff0000;
+}
+
+.social-btn.instagram:hover {
+  border-color: #e4405f;
+  box-shadow: 0 15px 35px rgba(228, 64, 95, 0.3);
+}
+
+.social-btn.instagram:hover::before {
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+
+/* Enhanced Responsive Design for Follow Section */
+
+/* Ultra-wide Desktop */
+@media (min-width: 1600px) {
+  .follow-inner {
+    padding: 0 120px;
+    max-width: 1400px;
+  }
+
+  .social-btn {
+    width: 130px;
+    height: 130px;
+  }
+
+  .social-btn svg {
+    width: 52px;
+    height: 52px;
+  }
+
+  .social-list {
+    gap: 60px;
+  }
+
+  .follow-title {
+    font-size: 72px;
+  }
+}
+
+/* Extra Large Desktop Optimization */
+@media (min-width: 1400px) {
+  .follow-inner {
+    padding: 0 100px;
+  }
+
+  .social-btn {
+    width: 120px;
+    height: 120px;
+  }
+
+  .social-btn svg {
+    width: 48px;
+    height: 48px;
+  }
+
+  .social-list {
+    gap: 55px;
+  }
+}
+
+/* Large Desktop */
+@media (max-width: 1300px) {
+  .follow-inner {
+    padding: 0 60px;
+  }
+
+  .follow-section {
+    padding: 150px 0 140px;
+  }
+}
+
+/* Medium Desktop */
+@media (max-width: 1100px) {
   .follow-title {
     font-size: 60px;
+    margin-bottom: 45px;
   }
 
   .social-btn {
@@ -1439,61 +1613,294 @@ header.scrolled .logo img {
   }
 
   .social-btn svg {
-    width: 40px;
-    height: 40px;
+    width: 38px;
+    height: 38px;
   }
 
   .follow-planets img {
     margin-bottom: 120px;
-  }
-}
-
-@media (max-width:760px) {
-  .follow-title {
-    font-size: 52px;
+    max-width: 1000px;
   }
 
   .social-list {
     gap: 40px;
   }
 
-  .social-btn {
-    width: 86px;
-    height: 86px;
+  .follow-ornament {
+    margin-bottom: 100px;
+  }
+}
+
+/* Tablet Landscape */
+@media (max-width: 900px) {
+  .follow-section {
+    padding: 120px 0 110px;
   }
 
-  .social-btn svg {
-    width: 34px;
-    height: 34px;
+  .follow-inner {
+    padding: 0 40px;
+  }
+
+  .follow-title {
+    font-size: 56px;
   }
 
   .follow-planets img {
     margin-bottom: 100px;
-  }
-
-  .follow-ornament {
-    margin-bottom: 90px;
+    max-width: 800px;
   }
 }
 
-@media (max-width:520px) {
+/* Tablet Portrait */
+@media (max-width: 760px) {
   .follow-title {
-    font-size: 46px;
+    font-size: 48px;
+    margin-bottom: 40px;
+  }
+
+  .social-list {
+    gap: 35px;
   }
 
   .social-btn {
-    width: 74px;
-    height: 74px;
+    width: 80px;
+    height: 80px;
   }
 
   .social-btn svg {
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 32px;
   }
 
   .follow-planets img {
     margin-bottom: 80px;
+    max-width: 600px;
   }
+
+  .follow-ornament {
+    margin-bottom: 70px;
+  }
+
+  .follow-section {
+    padding: 100px 0 90px;
+  }
+
+  .follow-inner {
+    padding: 0 30px;
+  }
+}
+
+/* Large Mobile */
+@media (max-width: 600px) {
+  .follow-section {
+    padding: 80px 0 70px;
+  }
+
+  .follow-title {
+    font-size: 42px;
+    margin-bottom: 35px;
+  }
+
+  .social-list {
+    gap: 25px;
+  }
+
+  .social-btn {
+    width: 70px;
+    height: 70px;
+  }
+
+  .social-btn svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .social-btn:hover {
+    transform: translateY(-5px) scale(1.05);
+  }
+
+  .follow-planets img {
+    margin-bottom: 60px;
+    max-width: 400px;
+  }
+
+  .follow-ornament {
+    margin-bottom: 50px;
+  }
+
+  .follow-inner {
+    padding: 0 25px;
+  }
+}
+
+/* Standard Mobile */
+@media (max-width: 520px) {
+  .follow-title {
+    font-size: 36px;
+    margin-bottom: 30px;
+  }
+
+  .social-btn {
+    width: 60px;
+    height: 60px;
+  }
+
+  .social-btn svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .follow-planets img {
+    margin-bottom: 50px;
+    max-width: 320px;
+  }
+
+  .social-list {
+    gap: 20px;
+  }
+
+  .follow-ornament {
+    margin-bottom: 40px;
+  }
+
+  .follow-section {
+    padding: 60px 0 50px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 400px) {
+  .follow-title {
+    font-size: 32px;
+    margin-bottom: 25px;
+  }
+
+  .social-btn {
+    width: 55px;
+    height: 55px;
+  }
+
+  .social-btn svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .social-list {
+    gap: 18px;
+  }
+
+  .follow-planets img {
+    margin-bottom: 40px;
+    max-width: 280px;
+  }
+
+  .follow-inner {
+    padding: 0 20px;
+  }
+
+  .follow-ornament {
+    margin-bottom: 35px;
+  }
+}
+
+/* Very Small Mobile */
+@media (max-width: 320px) {
+  .follow-title {
+    font-size: 28px;
+  }
+
+  .social-btn {
+    width: 50px;
+    height: 50px;
+  }
+
+  .social-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .social-list {
+    gap: 15px;
+  }
+
+  .follow-planets img {
+    max-width: 250px;
+  }
+
+  .follow-section {
+    padding: 50px 0 40px;
+  }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .social-btn {
+    /* Larger touch targets for mobile */
+    min-width: 60px;
+    min-height: 60px;
+    /* Remove hover transforms on touch devices */
+  }
+
+  .social-btn:hover {
+    transform: none;
+  }
+
+  .social-btn:active {
+    transform: scale(0.95);
+    transition: transform 0.1s ease;
+  }
+}
+
+/* Accessibility Improvements */
+@media (prefers-reduced-motion: reduce) {
+
+  .social-btn,
+  .social-btn::before,
+  .follow-ornament .arrow,
+  .follow-ornament .arrow::before,
+  .follow-ornament .arrow::after {
+    transition: none;
+  }
+
+  .social-btn:hover {
+    transform: none;
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  .social-btn {
+    border-width: 3px;
+  }
+
+  .follow-ornament .arrow,
+  .follow-ornament .arrow::before {
+    background: #000;
+  }
+
+  .follow-ornament .arrow::after {
+    border-left-color: #000;
+  }
+}
+
+/* Focus improvements for keyboard navigation */
+.social-btn:focus-visible {
+  outline: 3px solid #7f3fbf;
+  outline-offset: 4px;
+  border-color: #7f3fbf;
+}
+
+.social-list:focus-within .follow-ornament .arrow {
+  background: #7f3fbf;
+  width: 150px;
+}
+
+.social-list:focus-within .follow-ornament .arrow::before {
+  background: #7f3fbf;
+}
+
+.social-list:focus-within .follow-ornament .arrow::after {
+  border-left-color: #7f3fbf;
 }
 
 /* ============ Universal Arrow Styling (Horoscope-inspired) ============ */
