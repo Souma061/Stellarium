@@ -1,0 +1,360 @@
+/* Contact Page Specific Styles */
+
+/* Inner hero (contact page specific styling) */
+.inner-hero {
+  position: relative;
+  min-height: 420px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  text-align: center;
+  padding: 160px 40px 110px;
+  background: url('../Images/hero_inner_about_me.jpg') center top / cover no-repeat;
+}
+
+.inner-hero:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 120px;
+  background: url('../Images/white_divider_top.png') center top / cover no-repeat;
+  pointer-events: none;
+}
+
+.page-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 86px;
+  line-height: 1.02;
+  font-weight: 500;
+  color: #111;
+  letter-spacing: -0.5px;
+  position: relative;
+  z-index: 2;
+  margin: 0;
+}
+
+@media (max-width:760px) {
+  .page-title {
+    font-size: 58px;
+  }
+
+  .inner-hero {
+    padding: 130px 28px 100px;
+  }
+}
+
+/* Contact form section */
+.contact-section {
+  padding: 160px 0 140px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+/* ============ Universal Arrow Styling (Horoscope-inspired) ============ */
+
+/* Feature Row Arrows (Large) */
+.fr-arrow {
+  display: flex;
+  align-items: center;
+  margin: 0 0 18px;
+  height: 20px;
+}
+
+.fr-arrow .arrow {
+  position: relative;
+  display: block;
+  width: 100px;
+  height: 1px;
+  background: #111;
+  transition: background .35s ease, width .45s ease;
+}
+
+.fr-arrow .arrow::before {
+  content: '';
+  position: absolute;
+  left: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  background: #111;
+  border-radius: 50%;
+  transition: background .35s ease;
+}
+
+.fr-arrow .arrow::after {
+  content: '';
+  position: absolute;
+  right: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-left: 8px solid #111;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  transition: border-left-color .35s ease;
+}
+
+/* Hover effects for feature arrows */
+.fr-content:hover .fr-arrow .arrow,
+.contact-content:hover .fr-arrow .arrow {
+  background: #7f3fbf;
+  width: 110px;
+}
+
+.fr-content:hover .fr-arrow .arrow::before,
+.contact-content:hover .fr-arrow .arrow::before {
+  background: #7f3fbf;
+}
+
+.fr-content:hover .fr-arrow .arrow::after,
+.contact-content:hover .fr-arrow .arrow::after {
+  border-left-color: #7f3fbf;
+}
+
+/* Main Article Arrows (Medium-Large) */
+.main-article-arrow {
+  display: flex;
+  align-items: center;
+  margin-bottom: 32px;
+  height: 24px;
+}
+
+.main-article-arrow .arrow {
+  position: relative;
+  display: block;
+  width: 140px;
+  height: 2px;
+  background: #161616;
+  transition: background .35s ease, width .45s ease;
+}
+
+.main-article-arrow .arrow::before {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  background: #161616;
+  border-radius: 50%;
+  transition: background .35s ease;
+}
+
+.main-article-arrow .arrow::after {
+  content: '';
+  position: absolute;
+  right: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-left: 10px solid #161616;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  transition: border-left-color .35s ease;
+}
+
+/* Hover effects for main article arrows */
+.main-article-right:hover .main-article-arrow .arrow,
+.contact-content:hover .main-article-arrow .arrow {
+  background: #7f3fbf;
+  width: 150px;
+}
+
+.main-article-right:hover .main-article-arrow .arrow::before,
+.contact-content:hover .main-article-arrow .arrow::before {
+  background: #7f3fbf;
+}
+
+.main-article-right:hover .main-article-arrow .arrow::after,
+.contact-content:hover .main-article-arrow .arrow::after {
+  border-left-color: #7f3fbf;
+}
+
+/* Sidebar Arrows (Small) */
+.sidebar-arrow {
+  display: flex;
+  align-items: center;
+  height: 18px;
+  margin-top: 0;
+}
+
+.sidebar-arrow .arrow {
+  position: relative;
+  display: block;
+  width: 85px;
+  height: 1px;
+  background: #161616;
+  transition: background .35s ease, width .45s ease;
+}
+
+.sidebar-arrow .arrow::before {
+  content: '';
+  position: absolute;
+  left: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 5px;
+  height: 5px;
+  background: #161616;
+  border-radius: 50%;
+  transition: background .35s ease;
+}
+
+.sidebar-arrow .arrow::after {
+  content: '';
+  position: absolute;
+  right: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-left: 6px solid #161616;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  transition: border-left-color .35s ease;
+}
+
+/* Hover effects for sidebar arrows */
+.sidebar-item:hover .sidebar-arrow .arrow {
+  background: #7f3fbf;
+  width: 95px;
+}
+
+.sidebar-item:hover .sidebar-arrow .arrow::before {
+  background: #7f3fbf;
+}
+
+.sidebar-item:hover .sidebar-arrow .arrow::after {
+  border-left-color: #7f3fbf;
+}
+
+/* Generic Arrow Container (Most flexible) */
+.arrow-container {
+  display: flex;
+  align-items: center;
+  height: 20px;
+  margin: 12px 0;
+}
+
+.arrow-container .arrow {
+  position: relative;
+  display: block;
+  width: 100px;
+  height: 1px;
+  background: #161616;
+  transition: background .35s ease, width .45s ease;
+}
+
+.arrow-container .arrow::before {
+  content: '';
+  position: absolute;
+  left: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  background: #161616;
+  border-radius: 50%;
+  transition: background .35s ease;
+}
+
+.arrow-container .arrow::after {
+  content: '';
+  position: absolute;
+  right: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-left: 8px solid #161616;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  transition: border-left-color .35s ease;
+}
+
+/* Hover effects for generic arrow container */
+.arrow-container:hover .arrow {
+  background: #7f3fbf;
+  width: 110px;
+}
+
+.arrow-container:hover .arrow::before {
+  background: #7f3fbf;
+}
+
+.arrow-container:hover .arrow::after {
+  border-left-color: #7f3fbf;
+}
+
+/* Follow Section Ornament Arrow Styling */
+.follow-ornament {
+  position: relative;
+  width: 220px;
+  height: 24px;
+  margin: 0 auto 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.follow-ornament .arrow {
+  position: relative;
+  display: block;
+  width: 140px;
+  height: 2px;
+  background: #161616;
+  transition: background .35s ease, width .45s ease;
+}
+
+.follow-ornament .arrow::before {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  background: #161616;
+  border-radius: 50%;
+  transition: background .35s ease;
+}
+
+.follow-ornament .arrow::after {
+  content: '';
+  position: absolute;
+  right: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-left: 10px solid #161616;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  transition: border-left-color .35s ease;
+}
+
+/* Hover effects for follow ornament arrow */
+.follow-ornament:hover .arrow {
+  background: #7f3fbf;
+  width: 150px;
+}
+
+.follow-ornament:hover .arrow::before {
+  background: #7f3fbf;
+}
+
+.follow-ornament:hover .arrow::after {
+  border-left-color: #7f3fbf;
+}
+
+/* Ornament hover when hovering any social icon */
+.social-list:hover ~ .follow-ornament .arrow {
+  background: #7f3fbf;
+  width: 150px;
+}
+
+.social-list:hover ~ .follow-ornament .arrow::before {
+  background: #7f3fbf;
+}
+
+.social-list:hover ~ .follow-ornament .arrow::after {
+  border-left-color: #7f3fbf;
+}

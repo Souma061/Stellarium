@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stellarium</title>
+  <link rel="stylesheet" href="Css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <!-- Header/Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="Images/stellerium.png" alt="Stellarium Logo">
+      </div>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li class="has-mega">
+          <a href="#" class="mega-trigger" aria-haspopup="true" aria-expanded="false">Pages</a>
+          <div class="mega-menu" role="menu" aria-label="Pages submenu">
+            <div class="mega-inner">
+              <div class="mega-col left" role="none">
+                <ul>
+                  <li role="none"><a role="menuitem" href="about_me.html" class="main">About Me</a></li>
+                  <li role="none"><a role="menuitem" href="#">Services</a></li>
+                  <li role="none"><a role="menuitem" href="#">Case Studies</a></li>
+                  <li role="none"><a role="menuitem" href="#">General</a></li>
+                </ul>
+              </div>
+              <div class="mega-divider" aria-hidden="true"></div>
+              <div class="mega-col right" role="none">
+                <ul>
+                  <li role="none"><a role="menuitem" href="#">About Us</a></li>
+                  <li role="none"><a role="menuitem" href="contact.html">Contact</a></li>
+                  <li role="none"><a role="menuitem" href="#">Events</a></li>
+                  <li role="none"><a role="menuitem" href="#">Testimonials</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li><a href="#Forecast">Forecast</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="#Shop">Shop</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h4>About Me</h4>
+      <h1>Stella Mars</h1>
+      <p>
+        I have began my astrology career at young age and since I’ve written horoscopes for international editions of
+        famous magazines. I am the author of the bestseller Horoscope Guide. My online free horoscopes are read by more
+        than 5,000 people.
+      </p>
+      <a href="#" class="btn">View More</a>
+    </div>
+    <div class="hero-image">
+      <img src="Images/hero_slider_01.png" alt="Stella Mars">
+    </div>
+  </section>
+
+
+
+  <!-- Horoscope Forecast Section -->
+  <section class="forecast" id="Forecast">
+    <div class="forecast-header">
+      <h2>Horoscope Forecasts</h2>
+      <p>
+        Read free daily, weekly and monthly horoscopes which are always available through the website.
+        You will find a compilation of all current astrological forecasts.
+      </p>
+    </div>
+
+    <div class="forecast-grid">
+      <!-- Row 1 -->
+      <div class="forecast-item">
+        <img src="Images/Aries.png" alt="Aries">
+        <div class="arrow"></div>
+        <h3>Aries</h3>
+        <span class="date">MAR 21 - APR 19</span>
+      </div>
+      <div class="forecast-item">
+        <img src="Images/Taurus.png" alt="Taurus">
+        <div class="arrow"></div>
+        <h3>Taurus</h3>
+        <span class="date">APR 20 - MAY 20</span>
+      </div>
+      <div class="forecast-item">
+        <img src="Images/Gemini.png" alt="Gemini">
+        <div class="arrow"></div>
+        <h3>Gemini</h3>
+        <span class="date">MAY 21 - JUN 20</span>
+      </div>
+      <div class="forecast-item">
+        <img src="Images/cancer.png" alt="Cancer">
+        <div class="arrow"></div>
+        <h3>Cancer</h3>
+        <span class="date">JUN 21 - JUL 22</span>
+      </div>
+      <div class="forecast-item">
+        <img src="Images/leo.png" alt="Leo">
+        <div class="arrow"></div>
+        <h3>Leo</h3>
+        <span class="date">JUL 23 - AUG 22</span>
+      </div>
+      <div class="forecast-item">
+        <img src="Images/Virgo.png" alt="Virgo">
+        <div class="arrow"></div>
+        <h3>Virgo</h3>
+        <span class="date">AUG 23 - SEP 22</span>
+      </div>
+
+      <!-- Row 2 -->
+      <div class="forecast-item">
+        <img src="Images/Libra.png" alt="Libra">
+        <div class="arrow"></div>
+        <h3>Libra</h3>
+        <span class="date">SEP 23 - OCT 22</span>
+      </div>
+      <div class="forecast-item">
+        <img src="Images/Scorpio.png" alt="Scorpio">
+        <div class="arrow"></div>
+        <h3>Scorpio</h3>
+        <span class="date">OCT 23 - NOV 21</span>
+      </div>
+      <div class="forecast-item">
+        <img src="Images/Saggitarius.png" alt="Sagittarius">
+        <div class="arrow"></div>
+        <h3>Sagittarius</h3>
+        <span class="date">NOV 22 - DEC 21</span>
+      </div>
+      <div class="forecast-item">
+        <img src="Images/Capricorn.png" alt="Capricorn">
+        <div class="arrow"></div>
+        <h3>Capricorn</h3>
+        <span class="date">DEC 22 - JAN 19</span>
+      </div>
+      <div class="forecast-item">
+        <img src="Images/horoscope_white_11.png" alt="Aquarius">
+        <div class="arrow"></div>
+        <h3>Aquarius</h3>
+        <span class="date">JAN 20 - FEB 18</span>
+      </div>
+      <div class="forecast-item">
+        <img src="Images/Pisces.png" alt="Pisces">
+        <div class="arrow"></div>
+        <h3>Pisces</h3>
+        <span class="date">FEB 19 - MAR 20</span>
+      </div>
+    </div>
+  </section>
+  <section class="subscribe-section">
+    <div class="subscribe-container">
+      <h2 class="subscribe-title">Subscribe</h2>
+      <p class="subscribe-subtitle">GET YOUR MONTHLY HOROSCOPE STRAIGHT TO YOUR INBOX</p>
+      <div class="subscribe-forms-wrapper">
+        <form class="subscribe-form">
+          <div class="form-group fg-name">
+            <label>Name</label>
+            <input type="text" name="name" placeholder="">
+          </div>
+          <div class="form-group fg-email">
+            <label>E-mail</label>
+            <input type="email" name="email" placeholder="">
+          </div>
+          <div class="form-group fg-sign">
+            <label>Sun Sign</label>
+            <input type="text" name="sign" placeholder="">
+          </div>
+          <div class="form-group submit-btn fg-submit">
+            <button type="submit" aria-label="Subscribe">SUBSCRIBE</button>
+          </div>
+        </form>
+        <div class="planets aligned-planets">
+          <div class="planet-col"><img src="Images/planet_01.png" alt="Planet 1"></div>
+          <div class="planet-col"><img src="Images/planet_02.png" alt="Planet 2"></div>
+          <div class="planet-col"><img src="Images/planet_03.png" alt="Planet 3"></div>
+          <div class="planet-col"><img src="Images/planet_04.png" alt="Planet 4"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Astro Blog Section -->
+  <section class="astro-blog" id="Blog">
+    <div class="astro-blog-container">
+      <div class="blog-header">
+        <span class="section-eyebrow">LATEST ARTICLES</span>
+        <h2 class="blog-title">Astro Blog</h2>
+      </div>
+      <div class="blog-grid">
+        <article class="blog-card">
+          <div class="blog-image">
+            <img src="Images/post_01-1280x1200.jpg" alt="New Moon in Cancer" loading="lazy">
+          </div>
+          <div class="blog-meta">NOVEMBER 14, 2017 / ASTRO</div>
+          <h3 class="blog-post-title">New Moon in Cancer</h3>
+          <p class="blog-excerpt">Foul full count run batted in outside season, cracker jack hall of fame club check
+            swing. Rotation shift series sport ball around the...</p>
+          <a href="#" class="blog-readmore" aria-label="Read more New Moon in Cancer">
+            <span class="rm"><span class="rm-dot"></span><span class="rm-bar"></span><span
+                class="rm-arrow"></span></span>
+          </a>
+        </article>
+        <article class="blog-card">
+          <div class="blog-image">
+            <img src="Images/post_02-1280x1200.jpg" alt="Uranus in Houses" loading="lazy">
+          </div>
+          <div class="blog-meta">NOVEMBER 13, 2017 / TRANSITS</div>
+          <h3 class="blog-post-title">Uranus in Houses</h3>
+          <p class="blog-excerpt">Capitalize on low hanging fruit to identify a ballpark value added activity to beta
+            test. Override the digital divide with additional...</p>
+          <a href="#" class="blog-readmore" aria-label="Read more Uranus in Houses">
+            <span class="rm"><span class="rm-dot"></span><span class="rm-bar"></span><span
+                class="rm-arrow"></span></span>
+          </a>
+        </article>
+        <article class="blog-card">
+          <div class="blog-image">
+            <img src="Images/post_03-1280x1200.jpg" alt="Jupiter in Scorpio 2018" loading="lazy">
+          </div>
+          <div class="blog-meta">NOVEMBER 12, 2017 / MARS</div>
+          <h3 class="blog-post-title">Jupiter in Scorpio 2018</h3>
+          <p class="blog-excerpt">Sacrifice fly dead ball era grass base on balls cracker jack right field reds around
+            the horn disabled list. Outfield hack butcher b...</p>
+          <a href="#" class="blog-readmore" aria-label="Read more Jupiter in Scorpio 2018">
+            <span class="rm"><span class="rm-dot"></span><span class="rm-bar"></span><span
+                class="rm-arrow"></span></span>
+          </a>
+        </article>
+      </div>
+      <div class="blog-footer-cta">
+        <a href="#" class="blog-view-more" aria-label="View more blog posts">VIEW MORE</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Follow Us Section -->
+  <section class="follow-section" id="Follow">
+    <div class="follow-inner">
+      <div class="follow-planets">
+        <img src="Images/planets_footer.png" alt="Planets decorative" loading="lazy">
+      </div>
+      <h2 class="follow-title">Follow Us</h2>
+      <div class="follow-ornament" aria-hidden="true">
+        <div class="arrow"></div>
+      </div>
+      <ul class="social-list" aria-label="Social media links">
+        <li>
+          <a href="#" aria-label="Twitter" class="social-btn twitter" rel="noopener">
+            <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+              <path
+                d="M22.46 6c-.77.35-1.6.58-2.46.69a4.26 4.26 0 0 0 1.88-2.35 8.45 8.45 0 0 1-2.7 1.04 4.23 4.23 0 0 0-7.3 3.86A12 12 0 0 1 3.15 4.9a4.22 4.22 0 0 0 1.31 5.64 4.17 4.17 0 0 1-1.91-.52v.05a4.24 4.24 0 0 0 3.39 4.15 4.3 4.3 0 0 1-1.9.07 4.25 4.25 0 0 0 3.96 2.95A8.5 8.5 0 0 1 2 19.54a12 12 0 0 0 6.29 1.84c7.55 0 11.68-6.26 11.68-11.68 0-.18 0-.36-.01-.54A8.35 8.35 0 0 0 22.46 6z"
+                fill="currentColor" />
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="#" aria-label="Facebook" class="social-btn facebook" rel="noopener">
+            <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+              <path
+                d="M22 12.07C22 6.48 17.52 2 11.93 2 6.35 2 1.87 6.48 1.87 12.07c0 5.02 3.66 9.19 8.44 9.93v-7.03H7.9v-2.9h2.41V9.84c0-2.38 1.42-3.7 3.6-3.7 1.04 0 2.13.19 2.13.19v2.34h-1.2c-1.18 0-1.55.74-1.55 1.5v1.8h2.64l-.42 2.9h-2.22V22c4.78-.74 8.44-4.91 8.44-9.93Z"
+                fill="currentColor" />
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="#" aria-label="YouTube" class="social-btn youtube" rel="noopener">
+            <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+              <path
+                d="M21.58 7.2a2.74 2.74 0 0 0-1.92-1.94C17.98 4.8 12 4.8 12 4.8s-5.98 0-7.66.46A2.74 2.74 0 0 0 2.42 7.2 28.7 28.7 0 0 0 2 12a28.7 28.7 0 0 0 .42 4.8c.25.9.98 1.6 1.92 1.84 1.68.46 7.66.46 7.66.46s5.98 0 7.66-.46a2.74 2.74 0 0 0 1.92-1.94c.28-1.58.42-3.2.42-4.8a28.7 28.7 0 0 0-.42-4.8ZM10 15.2V8.8l5.2 3.2L10 15.2Z"
+                fill="currentColor" />
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="#" aria-label="Instagram" class="social-btn instagram" rel="noopener">
+            <svg viewBox="0 0 24 24" role="img" aria-hidden="true">
+              <path
+                d="M12 7.35A4.65 4.65 0 1 0 12 16.65 4.65 4.65 0 0 0 12 7.35Zm0 7.65A3 3 0 1 1 12 9a3 3 0 0 1 0 6Zm5.88-7.76a1.09 1.09 0 1 1-2.18 0 1.09 1.09 0 0 1 2.18 0ZM12 2c2.6 0 2.92.01 3.95.06 1.02.05 1.72.22 2.33.47a4.66 4.66 0 0 1 1.68 1.09 4.66 4.66 0 0 1 1.09 1.68c.25.61.42 1.31.47 2.33.05 1.03.06 1.35.06 3.95s-.01 2.92-.06 3.95c-.05 1.02-.22 1.72-.47 2.33a4.66 4.66 0 0 1-1.09 1.68 4.66 4.66 0 0 1-1.68 1.09c-.61.25-1.31.42-2.33.47-1.03.05-1.35.06-3.95.06s-2.92-.01-3.95-.06c-1.02-.05-1.72-.22-2.33-.47a4.66 4.66 0 0 1-1.68-1.09 4.66 4.66 0 0 1-1.09-1.68c-.25-.61-.42-1.31-.47-2.33C2.01 14.92 2 14.6 2 12s.01-2.92.06-3.95c.05-1.02.22-1.72.47-2.33a4.66 4.66 0 0 1 1.09-1.68A4.66 4.66 0 0 1 5.3 2.53c.61-.25 1.31-.42 2.33-.47C8.65 2.01 8.97 2 11.57 2H12Zm0 1.6c-2.55 0-2.85.01-3.86.06-.93.04-1.44.2-1.77.33-.45.18-.76.39-1.09.72-.33.33-.54.64-.72 1.09-.13.33-.29.84-.33 1.77-.05 1.01-.06 1.31-.06 3.86s.01 2.85.06 3.86c.04.93.2 1.44.33 1.77.18.45.39.76.72 1.09.33.33.64.54 1.09.72.33.13.84.29 1.77.33 1.01.05 1.31.06 3.86.06s2.85-.01 3.86-.06c.93-.04 1.44-.2 1.77-.33.45-.18.76-.39 1.09-.72.33-.33.54-.64.72-1.09.13-.33.29-.84.33-1.77.05-1.01.06-1.31.06-3.86s-.01-2.85-.06-3.86c-.04-.93-.2-1.44-.33-1.77a3.08 3.08 0 0 0-.72-1.09 3.08 3.08 0 0 0-1.09-.72c-.33-.13-.84-.29-1.77-.33-1.01-.05-1.31-.06-3.86-.06Z"
+                fill="currentColor" />
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <script src="Js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,1410 @@
+/* About Me Page Specific Styles */
+
+/* Inner hero (pink textured background) */
+.inner-hero {
+  position: relative;
+  min-height: 420px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  text-align: center;
+  padding: 160px 40px 110px;
+  background: url('../Images/hero_inner_about_me.jpg') center top / cover no-repeat;
+}
+
+.inner-hero:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 120px;
+  background: url('../Images/white_divider_top.png') center top / cover no-repeat;
+  pointer-events: none;
+}
+
+.page-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 86px;
+  line-height: 1.02;
+  font-weight: 500;
+  color: #111;
+  letter-spacing: -0.5px;
+  position: relative;
+  z-index: 2;
+  margin: 0;
+}
+
+@media (max-width:760px) {
+  .page-title {
+    font-size: 58px;
+  }
+
+  .inner-hero {
+    padding: 130px 28px 100px;
+  }
+}
+
+/* About intro section */
+.about-intro {
+  padding: 160px 0 140px;
+  background: #fff;
+  position: relative;
+}
+
+.about-intro-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: flex-start;
+  gap: 120px;
+  padding: 0 28px;
+  /* reduced horizontal padding */
+}
+
+.about-intro-text {
+  flex: 1;
+  max-width: 540px;
+}
+
+.about-intro-text h2 {
+  font-size: 68px;
+  font-weight: 500;
+  font-family: 'Cormorant Garamond', serif;
+  margin: 0 0 38px;
+  letter-spacing: -0.5px;
+  color: #111;
+  line-height: 1.05;
+}
+
+/* Meta zodiac list */
+.about-meta {
+  display: flex;
+  gap: 42px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2.6px;
+  text-transform: uppercase;
+  margin: 0 0 36px;
+  position: relative;
+  color: #888;
+}
+
+.about-meta li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.about-meta .sign-icon {
+  font-size: 17px;
+  color: #ddd;
+  line-height: 1;
+  display: inline-block;
+  position: relative;
+  top: -1px;
+}
+
+.about-meta li.active {
+  color: #111;
+}
+
+.about-meta li.active .sign-icon {
+  color: #b14be2;
+}
+
+.about-meta .sign-label {
+  letter-spacing: 2.8px;
+}
+
+/* Decorative divider line with dot + arrow */
+.about-divider {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  width: 220px;
+  height: 16px;
+  position: relative;
+  margin: 0 0 44px;
+}
+
+.about-divider .ad-line {
+  height: 1px;
+  background: #111;
+  position: absolute;
+  left: 16px;
+  right: 6px;
+  /* match slimmer arrow width */
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Arrow head only (no extra shaft block) */
+.about-divider .ad-arrow {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 6px solid #111;
+  /* slimmer arrow width */
+  border-top: 3px solid transparent;
+  /* slimmer arrow height */
+  border-bottom: 3px solid transparent;
+}
+
+/* Dot style (absolute for consistent spacing) */
+.about-divider .ad-dot {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  background: #111;
+  border-radius: 50%;
+}
+
+/* Social icons row */
+.about-social {
+  display: flex;
+  gap: 16px;
+  margin: 8px 0 40px;
+  padding: 0;
+}
+
+.about-social li {
+  list-style: none;
+}
+
+.about-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid #b14be2;
+  border-radius: 50%;
+  color: #b14be2;
+  text-decoration: none;
+  transition: background .32s ease, color .32s ease, border-color .32s ease;
+}
+
+.about-social a:hover {
+  background: #b14be2;
+  color: #fff;
+  border-color: #b14be2;
+}
+
+.about-cta {
+  margin-top: 8px;
+  display: inline-block;
+}
+
+.about-intro-text p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  line-height: 1.67;
+  margin: 0 0 32px;
+  color: #222;
+  font-weight: 500;
+  letter-spacing: 0.1px;
+}
+
+/* Social icons row */
+.about-social {
+  display: flex;
+  gap: 18px;
+  margin: 10px 0 48px;
+  padding: 0;
+}
+
+.about-social li {
+  list-style: none;
+}
+
+.about-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  color: #666;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.about-social a:hover {
+  background: #b14be2;
+  color: #fff;
+  border-color: #b14be2;
+}
+
+.about-cta {
+  margin-top: 0;
+  display: inline-block;
+}
+
+.about-intro-image {
+  flex: 0 0 auto;
+  position: relative;
+}
+
+.about-intro-image img {
+  max-width: 480px;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Chart Section */
+.chart-section {
+  padding: 140px 0 0px;
+  background: #F6F6F5;
+  position: relative;
+}
+
+.chart-section-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 28px;
+  /* reduced */
+}
+
+.chart-header {
+  margin-bottom: 0px;
+  text-align: left;
+  max-width: none;
+}
+
+/* Chart description paragraphs side-by-side (desktop) */
+.chart-description-text {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(280px, 1fr));
+  gap: 38px 70px;
+  /* row gap, column gap */
+  margin: 0 0 78px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.chart-description-text p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.62;
+  color: #222;
+  font-weight: 500;
+  letter-spacing: .15px;
+}
+
+.chart-main-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 72px;
+  font-weight: 500;
+  color: #111;
+  margin: 0 0 24px;
+  letter-spacing: -0.6px;
+  line-height: 1.02;
+  text-align: left;
+}
+
+/* Slimmer divider under chart title (matches provided reference) */
+.chart-title-divider {
+  position: relative;
+  width: 210px;
+  height: 16px;
+  margin: 0 0 46px;
+}
+
+.chart-title-divider .chart-line {
+  height: 1px;
+  background: #111;
+  position: absolute;
+  left: 16px;
+  right: 6px;
+  /* match slimmer arrow width */
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.chart-title-divider .chart-arrow {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 6px solid #111;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+}
+
+/* Missing dot style */
+.chart-title-divider .chart-dot {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  background: #111;
+  border-radius: 50%;
+}
+
+/* (Removed early duplicate follow ornament styles to avoid conflicts) */
+
+.chart-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 140px;
+  flex-direction: row-reverse;
+  margin-top: 60px;
+}
+
+.chart-image-container {
+  flex: 1;
+  max-width: 540px;
+  position: relative;
+}
+
+.chart-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+}
+
+.chart-base,
+.chart-overlay {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: opacity 0.6s ease;
+}
+
+.chart-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  z-index: 2;
+}
+
+/* Standard hover swap (only when not using always-both variant) */
+.chart-image-wrapper:not(.always-both):hover .chart-base {
+  opacity: 0;
+}
+
+.chart-image-wrapper:not(.always-both):hover .chart-overlay {
+  opacity: 1;
+}
+
+/* Always-both variant: Service-2over overlay sits above cloudy base; fades out on hover */
+.chart-section .chart-image-wrapper.always-both .chart-base {
+  /* cloudy chart always visible as base */
+  opacity: 1;
+}
+
+.chart-section .chart-image-wrapper.always-both .chart-overlay {
+  /* Service-2over overlay visible initially */
+  opacity: 1;
+  transition: opacity 0.6s ease;
+}
+
+/* On hover: KEEP cloudy base visible, fade out Service-2over overlay */
+.chart-section .chart-image-wrapper.always-both:hover .chart-base {
+  opacity: 1;
+  /* Cloudy base stays visible */
+}
+
+.chart-section .chart-image-wrapper.always-both:hover .chart-overlay {
+  opacity: 0;
+  /* Service-2over overlay disappears on hover */
+}
+
+
+.planetary-data {
+  flex: 1;
+  max-width: 460px;
+}
+
+.tropical-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #111;
+  margin: 0 0 40px;
+  text-align: center;
+}
+
+.planet-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.planet-item {
+  display: flex;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid #eee;
+  gap: 18px;
+}
+
+.planet-item:last-child {
+  border-bottom: none;
+}
+
+.planet-icon {
+  font-size: 18px;
+  color: #b14be2;
+  width: 26px;
+  text-align: center;
+  line-height: 1;
+}
+
+.planet-name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: #111;
+  width: 80px;
+}
+
+.sign-icon {
+  font-size: 16px;
+  color: #b14be2;
+  width: 20px;
+  text-align: center;
+  line-height: 1;
+}
+
+.sign-name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: #666;
+  flex: 1;
+}
+
+.sign-name.retrograde {
+  color: #b14be2;
+}
+
+@media (max-width:1180px) {
+  .chart-section-inner {
+    padding: 0 34px;
+  }
+
+  .chart-main-title {
+    font-size: 64px;
+  }
+
+  .chart-content {
+    gap: 90px;
+  }
+
+  .chart-description-text {
+    gap: 50px;
+  }
+}
+
+@media (max-width:980px) {
+  .about-intro-inner {
+    flex-direction: column;
+    gap: 80px;
+    text-align: center;
+  }
+
+  .about-intro-text {
+    max-width: none;
+  }
+
+  .about-intro-text h2 {
+    text-align: center;
+  }
+
+  .about-intro-text p {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .about-meta {
+    justify-content: center;
+  }
+
+  .about-divider {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .about-social {
+    justify-content: center;
+  }
+
+  .about-intro-image img {
+    max-width: 460px;
+  }
+
+  .chart-section {
+    padding: 100px 0 80px;
+  }
+
+  .chart-section-inner {
+    padding: 0 34px;
+  }
+
+  .chart-description-text {
+    display: flex;
+    /* override desktop grid */
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 80px;
+  }
+
+  .chart-content {
+    flex-direction: column;
+    gap: 80px;
+    margin-top: 40px;
+  }
+
+  .chart-image-container,
+  .planetary-data {
+    max-width: none;
+  }
+
+  .chart-image-container {
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .chart-main-title {
+    font-size: 56px;
+    text-align: left;
+  }
+
+  .chart-title-divider {
+    margin-left: 0;
+    margin-right: auto;
+  }
+}
+
+@media (max-width:640px) {
+  .chart-section {
+    padding: 80px 0 100px;
+  }
+
+  .chart-section-inner {
+    padding: 0 24px;
+  }
+
+  .chart-header {
+    margin-bottom: 60px;
+  }
+
+  .chart-main-title {
+    font-size: 48px;
+    margin-bottom: 26px;
+  }
+
+  .chart-description-text {
+    margin-bottom: 40px;
+  }
+
+  .chart-description-text p {
+    font-size: 14px;
+  }
+
+  .chart-content {
+    gap: 50px;
+  }
+
+  .planet-item {
+    padding: 10px 0;
+    gap: 12px;
+  }
+
+  .planet-name {
+    width: 70px;
+    font-size: 11px;
+  }
+
+  .sign-name {
+    font-size: 11px;
+  }
+
+  .chart-image-container {
+    max-width: 380px;
+  }
+}
+
+/* (Removed old flex-based about-divider variant to keep absolute-positioned arrow style) */
+
+@media (max-width:640px) {
+  .page-title {
+    font-size: 58px;
+  }
+
+  .inner-hero {
+    padding: 130px 28px 100px;
+  }
+
+  .about-intro {
+    padding: 120px 0 110px;
+  }
+
+  .about-intro-inner {
+    padding: 0 24px;
+    gap: 60px;
+  }
+
+  .about-intro-text h2 {
+    font-size: 52px;
+  }
+
+  .about-intro-text p {
+    font-size: 14px;
+  }
+
+  .about-meta {
+    gap: 26px;
+    font-size: 10px;
+  }
+
+  .about-social a {
+    width: 44px;
+    height: 44px;
+  }
+
+  .about-intro-image img {
+    max-width: 380px;
+  }
+
+  .chart-section {
+    padding: 80px 0 100px;
+  }
+
+  .chart-main-title {
+    font-size: 48px;
+  }
+
+  .chart-description-text {
+    gap: 20px;
+  }
+
+  .chart-description-text p {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .chart-content {
+    flex-direction: column;
+    gap: 60px;
+    margin-top: 30px;
+  }
+
+  .chart-image-container {
+    max-width: 380px;
+    margin: 0 auto;
+  }
+}
+
+/* Book a Reading Section */
+.book-reading-section {
+  padding: 140px 0 160px;
+  background: #fff;
+  position: relative;
+}
+
+.book-reading-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 28px;
+  /* reduced */
+}
+
+.book-reading-content {
+  display: flex;
+  align-items: center;
+  gap: 140px;
+}
+
+.book-reading-text {
+  flex: 1;
+  max-width: 520px;
+  border: 2px solid #111;
+  padding: 60px 40px;
+}
+
+.book-reading-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 52px;
+  font-weight: 500;
+  color: #111;
+  margin: 0 0 50px;
+  letter-spacing: -.4px;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.reading-services {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.service-item {
+  display: flex;
+  align-items: center;
+  padding: 18px 0;
+  border-bottom: 1px solid #e0e0e0;
+  background: #fff;
+  position: relative;
+}
+
+.service-item:last-child {
+  border-bottom: none;
+}
+
+.service-icon {
+  font-size: 16px;
+  color: #b14be2;
+  width: 24px;
+  text-align: left;
+  line-height: 1;
+  margin-right: 20px;
+  flex-shrink: 0;
+}
+
+.service-name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #111;
+  flex: 1;
+}
+
+.service-line {
+  height: 1px;
+  background: #b14be2;
+  width: 60px;
+  margin-left: auto;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.service-line::after {
+  content: '';
+  position: absolute;
+  right: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-left: 6px solid #b14be2;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+}
+
+.book-reading-image {
+  flex: 1;
+  max-width: 520px;
+  position: relative;
+}
+
+.reading-chart-wrapper {
+  position: relative;
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+}
+
+.reading-chart-base,
+.reading-chart-overlay {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: opacity 0.6s ease;
+}
+
+.reading-chart-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+/* Reading chart hover effect */
+.reading-chart-wrapper.always-both-reading .reading-chart-base {
+  opacity: 1;
+}
+
+.reading-chart-wrapper.always-both-reading .reading-chart-overlay {
+  opacity: 1;
+  transition: opacity 0.6s ease;
+}
+
+.reading-chart-wrapper.always-both-reading:hover .reading-chart-base {
+  opacity: 1;
+}
+
+.reading-chart-wrapper.always-both-reading:hover .reading-chart-overlay {
+  opacity: 0;
+}
+
+@media (max-width:1180px) {
+  .book-reading-inner {
+    padding: 0 34px;
+  }
+
+  .book-reading-title {
+    font-size: 64px;
+  }
+
+  .book-reading-content {
+    gap: 90px;
+  }
+}
+
+@media (max-width:980px) {
+  .book-reading-section {
+    padding: 100px 0 120px;
+  }
+
+  .book-reading-content {
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  .book-reading-text,
+  .book-reading-image {
+    max-width: none;
+  }
+
+  .book-reading-title {
+    font-size: 56px;
+    text-align: center;
+  }
+
+  .book-reading-image {
+    max-width: 480px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width:640px) {
+  .book-reading-section {
+    padding: 80px 0 100px;
+  }
+
+  .book-reading-inner {
+    padding: 0 24px;
+  }
+
+  .book-reading-text {
+    padding: 40px 24px;
+  }
+
+  .book-reading-title {
+    font-size: 42px;
+    margin-bottom: 35px;
+  }
+
+  .reading-services {
+    gap: 0;
+  }
+
+  .service-item {
+    padding: 15px 0;
+  }
+
+  .service-icon {
+    width: 20px;
+    margin-right: 16px;
+  }
+
+  .service-name {
+    font-size: 11px;
+    letter-spacing: 1.2px;
+  }
+
+  .service-line {
+    width: 50px;
+  }
+
+  .book-reading-image {
+    max-width: 380px;
+  }
+}
+
+/* ================= Follow Us Section ================= */
+.follow-section {
+  position: relative;
+  background: #fff url('../Images/grey_sparkle_02.jpg') center top repeat-y;
+  padding: 170px 0 160px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.follow-inner {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 40px;
+  /* reduced */
+}
+
+.follow-planets img {
+  width: 100%;
+  max-width: 1180px;
+  height: auto;
+  display: block;
+  margin: 0 auto 140px;
+}
+
+.follow-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 68px;
+  font-weight: 500;
+  line-height: 1.05;
+  margin: 0 0 54px;
+  letter-spacing: -.4px;
+}
+
+/* Decorative line under title */
+.follow-ornament {
+  position: relative;
+  width: 220px;
+  height: 24px;
+  margin: 0 auto 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.follow-ornament .arrow {
+  position: relative;
+  display: block;
+  width: 140px;
+  height: 2px;
+  background: #161616;
+  transition: background .35s ease, width .45s ease;
+}
+
+.follow-ornament .arrow::before {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  background: #161616;
+  border-radius: 50%;
+  transition: background .35s ease;
+}
+
+.follow-ornament .arrow::after {
+  content: '';
+  position: absolute;
+  right: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-left: 10px solid #161616;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  transition: border-left-color .35s ease;
+}
+
+/* Social icons */
+.social-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  flex-wrap: wrap;
+}
+
+.social-btn {
+  width: 65px;
+  height: 65px;
+  border: 1px solid #000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  text-decoration: none;
+  position: relative;
+  font-size: 0;
+  transition: background .4s ease, color .3s ease, border-color .35s ease;
+}
+
+.social-btn svg {
+  width: 35px;
+  height: 35px;
+}
+
+.social-btn:hover {
+  background: #000;
+  color: #fff;
+  border-color: #000;
+}
+
+.social-btn:focus-visible {
+  outline: 2px solid #000;
+  outline-offset: 4px;
+}
+
+/* Hover effects for follow ornament arrow */
+.follow-ornament:hover .arrow {
+  background: #7f3fbf;
+  width: 150px;
+}
+
+.follow-ornament:hover .arrow::before {
+  background: #7f3fbf;
+}
+
+.follow-ornament:hover .arrow::after {
+  border-left-color: #7f3fbf;
+}
+
+/* Ornament hover when hovering any social icon */
+.social-list:hover ~ .follow-ornament .arrow {
+  background: #7f3fbf;
+  width: 150px;
+}
+
+.social-list:hover ~ .follow-ornament .arrow::before {
+  background: #7f3fbf;
+}
+
+.social-list:hover ~ .follow-ornament .arrow::after {
+  border-left-color: #7f3fbf;
+}
+
+@media (max-width:1100px) {
+  .follow-title {
+    font-size: 60px;
+  }
+
+  .social-btn {
+    width: 96px;
+    height: 96px;
+  }
+
+  .social-btn svg {
+    width: 40px;
+    height: 40px;
+  }
+
+  .follow-planets img {
+    margin-bottom: 120px;
+  }
+}
+
+@media (max-width:760px) {
+  .follow-title {
+    font-size: 52px;
+  }
+
+  .social-list {
+    gap: 40px;
+  }
+
+  .social-btn {
+    width: 86px;
+    height: 86px;
+  }
+
+  .social-btn svg {
+    width: 34px;
+    height: 34px;
+  }
+
+  .follow-planets img {
+    margin-bottom: 100px;
+  }
+
+  .follow-ornament {
+    margin-bottom: 90px;
+  }
+}
+
+@media (max-width:520px) {
+  .follow-title {
+    font-size: 46px;
+  }
+
+  .social-btn {
+    width: 74px;
+    height: 74px;
+  }
+
+  .social-btn svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  .follow-planets img {
+    margin-bottom: 80px;
+  }
+
+  .follow-ornament {
+    margin-bottom: 80px;
+  }
+
+  .follow-section {
+    padding: 140px 0 130px;
+  }
+}
+
+/* Minimal placeholder sections to satisfy anchors (can be removed when real sections exist) */
+.placeholder-section {
+  height: 1px;
+  overflow: hidden;
+}
+
+/* ============ Universal Arrow Styling (Horoscope-inspired) ============ */
+
+/* Feature Row Arrows (Large) */
+.fr-arrow {
+  display: flex;
+  align-items: center;
+  margin: 0 0 18px;
+  height: 20px;
+}
+
+.fr-arrow .arrow {
+  position: relative;
+  display: block;
+  width: 100px;
+  height: 1px;
+  background: #111;
+  transition: background .35s ease, width .45s ease;
+}
+
+.fr-arrow .arrow::before {
+  content: '';
+  position: absolute;
+  left: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  background: #111;
+  border-radius: 50%;
+  transition: background .35s ease;
+}
+
+.fr-arrow .arrow::after {
+  content: '';
+  position: absolute;
+  right: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-left: 8px solid #111;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  transition: border-left-color .35s ease;
+}
+
+/* Hover effects for feature arrows */
+.fr-content:hover .fr-arrow .arrow,
+.article-content:hover .fr-arrow .arrow {
+  background: #7f3fbf;
+  width: 110px;
+}
+
+.fr-content:hover .fr-arrow .arrow::before,
+.article-content:hover .fr-arrow .arrow::before {
+  background: #7f3fbf;
+}
+
+.fr-content:hover .fr-arrow .arrow::after,
+.article-content:hover .fr-arrow .arrow::after {
+  border-left-color: #7f3fbf;
+}
+
+/* Main Article Arrows (Medium-Large) */
+.main-article-arrow {
+  display: flex;
+  align-items: center;
+  margin-bottom: 32px;
+  height: 24px;
+}
+
+.main-article-arrow .arrow {
+  position: relative;
+  display: block;
+  width: 140px;
+  height: 2px;
+  background: #161616;
+  transition: background .35s ease, width .45s ease;
+}
+
+.main-article-arrow .arrow::before {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  background: #161616;
+  border-radius: 50%;
+  transition: background .35s ease;
+}
+
+.main-article-arrow .arrow::after {
+  content: '';
+  position: absolute;
+  right: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-left: 10px solid #161616;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  transition: border-left-color .35s ease;
+}
+
+/* Hover effects for main article arrows */
+.main-article-right:hover .main-article-arrow .arrow,
+.article-content:hover .main-article-arrow .arrow {
+  background: #7f3fbf;
+  width: 150px;
+}
+
+.main-article-right:hover .main-article-arrow .arrow::before,
+.article-content:hover .main-article-arrow .arrow::before {
+  background: #7f3fbf;
+}
+
+.main-article-right:hover .main-article-arrow .arrow::after,
+.article-content:hover .main-article-arrow .arrow::after {
+  border-left-color: #7f3fbf;
+}
+
+/* Sidebar Arrows (Small) */
+.sidebar-arrow {
+  display: flex;
+  align-items: center;
+  height: 18px;
+  margin-top: 0;
+}
+
+.sidebar-arrow .arrow {
+  position: relative;
+  display: block;
+  width: 85px;
+  height: 1px;
+  background: #161616;
+  transition: background .35s ease, width .45s ease;
+}
+
+.sidebar-arrow .arrow::before {
+  content: '';
+  position: absolute;
+  left: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 5px;
+  height: 5px;
+  background: #161616;
+  border-radius: 50%;
+  transition: background .35s ease;
+}
+
+.sidebar-arrow .arrow::after {
+  content: '';
+  position: absolute;
+  right: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-left: 6px solid #161616;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  transition: border-left-color .35s ease;
+}
+
+/* Hover effects for sidebar arrows */
+.sidebar-item:hover .sidebar-arrow .arrow {
+  background: #7f3fbf;
+  width: 95px;
+}
+
+.sidebar-item:hover .sidebar-arrow .arrow::before {
+  background: #7f3fbf;
+}
+
+.sidebar-item:hover .sidebar-arrow .arrow::after {
+  border-left-color: #7f3fbf;
+}
+
+/* Generic Arrow Container (Most flexible) */
+.arrow-container {
+  display: flex;
+  align-items: center;
+  height: 20px;
+  margin: 12px 0;
+}
+
+.arrow-container .arrow {
+  position: relative;
+  display: block;
+  width: 100px;
+  height: 1px;
+  background: #161616;
+  transition: background .35s ease, width .45s ease;
+}
+
+.arrow-container .arrow::before {
+  content: '';
+  position: absolute;
+  left: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  background: #161616;
+  border-radius: 50%;
+  transition: background .35s ease;
+}
+
+.arrow-container .arrow::after {
+  content: '';
+  position: absolute;
+  right: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-left: 8px solid #161616;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  transition: border-left-color .35s ease;
+}
+
+/* Hover effects for generic arrow container */
+.arrow-container:hover .arrow {
+  background: #7f3fbf;
+  width: 110px;
+}
+
+.arrow-container:hover .arrow::before {
+  background: #7f3fbf;
+}
+
+.arrow-container:hover .arrow::after {
+  border-left-color: #7f3fbf;
+}
