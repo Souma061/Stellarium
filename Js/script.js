@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const pagesTrigger = document.querySelector('.pages-trigger');
   const pagesSubmenu = document.querySelector('.pages-submenu');
   const submenuOverlay = document.querySelector('.submenu-overlay');
+  const mobileNavOverlay = document.querySelector('.mobile-nav-overlay');
 
   // Create hamburger bars if they don't exist
   if (toggle && toggle.children.length === 0) {
@@ -51,6 +52,11 @@ document.addEventListener("DOMContentLoaded", () => {
       toggle.classList.toggle('active', isActive);
       document.body.style.overflow = isActive ? 'hidden' : '';
 
+      // Toggle mobile overlay
+      if (mobileNavOverlay) {
+        mobileNavOverlay.classList.toggle('active', isActive);
+      }
+
       // Add stagger animation to nav items
       if (isActive) {
         const navItems = navLinks.querySelectorAll('li');
@@ -63,6 +69,35 @@ document.addEventListener("DOMContentLoaded", () => {
             item.style.transform = 'translateX(0)';
           }, 100 + (index * 100));
         });
+      }
+    });
+
+    // Close mobile menu when clicking overlay
+    if (mobileNavOverlay) {
+      mobileNavOverlay.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        toggle.classList.remove('active');
+        mobileNavOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+    }
+
+    // Close mobile menu when clicking close button (the ::after pseudo-element)
+    navLinks.addEventListener('click', (e) => {
+      const rect = navLinks.getBoundingClientRect();
+      const closeButtonArea = {
+        left: rect.right - 70,
+        right: rect.right - 20,
+        top: rect.top + 20,
+        bottom: rect.top + 70
+      };
+
+      if (e.clientX >= closeButtonArea.left && e.clientX <= closeButtonArea.right &&
+          e.clientY >= closeButtonArea.top && e.clientY <= closeButtonArea.bottom) {
+        navLinks.classList.remove('active');
+        toggle.classList.remove('active');
+        if (mobileNavOverlay) mobileNavOverlay.classList.remove('active');
+        document.body.style.overflow = '';
       }
     });
 

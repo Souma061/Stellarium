@@ -439,12 +439,19 @@ body.blog-page {
 
 /* Mobile image - hidden by default on desktop */
 .fr-mobile-image {
-  display: none;
+  display: none !important;
   width: 100%;
   height: 250px;
   object-fit: cover;
   object-position: center center;
   border-radius: 8px;
+}
+
+/* Ensure mobile image is explicitly hidden on large screens */
+@media (min-width: 1101px) {
+  .fr-mobile-image {
+    display: none !important;
+  }
 }
 
 .sf-slide figcaption {
@@ -537,7 +544,7 @@ body.blog-page {
   }
 
   .fr-mobile-image {
-    display: block;
+    display: block !important;
     width: 100%;
     max-width: 640px;
     height: 300px;
@@ -573,7 +580,7 @@ body.blog-page {
   }
 
   .fr-mobile-image {
-    display: block;
+    display: block !important;
     width: 100%;
     max-width: 350px;
     height: 250px;
@@ -1520,7 +1527,7 @@ body.blog-page {
     }
 
     .fr-mobile-image {
-      display: block;
+      display: block !important;
       width: 100%;
       height: 200px;
       border-radius: 8px;
