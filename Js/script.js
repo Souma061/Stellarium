@@ -189,74 +189,37 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Enhanced slider with better performance and accessibility
+  // Simple Slider
   const sliders = document.querySelectorAll('[data-slider]');
   sliders.forEach(slider => {
     const track = slider.querySelector('.sf-track');
-    const slides = Array.from(track.children);
+    const slides = track.querySelectorAll('.sf-slide');
     const nav = slider.querySelector('.sf-nav');
 
+    let currentSlide = 0;
+
+    // Create navigation dots
     slides.forEach((_, i) => {
       const button = document.createElement('button');
-      button.type = 'button';
-      button.setAttribute('aria-label', `Go to slide ${i + 1}`);
-      button.setAttribute('role', 'tab');
       if (i === 0) button.classList.add('active');
-      button.addEventListener('click', () => goTo(i));
+      button.addEventListener('click', () => goToSlide(i));
       nav.appendChild(button);
     });
 
-    let index = 0;
-    let timer;
-    let isUserInteracting = false;
+    function goToSlide(index) {
+      currentSlide = index;
+      track.style.transform = `translateX(-${index * 20}%)`;
 
-    function goTo(i) {
-      index = (i + slides.length) % slides.length;
-      track.style.transform = `translateX(-${index * 100}%)`;
-      nav.querySelectorAll('button').forEach((button, buttonIndex) => {
-        button.classList.toggle('active', buttonIndex === index);
-        button.setAttribute('aria-selected', buttonIndex === index);
+      // Update active dot
+      nav.querySelectorAll('button').forEach((btn, i) => {
+        btn.classList.toggle('active', i === index);
       });
-      restart();
     }
 
-    function next() {
-      if (!isUserInteracting) {
-        goTo(index + 1);
-      }
-    }
-
-    function restart() {
-      clearInterval(timer);
-      timer = setInterval(next, 6000);
-    }
-
-    // Pause on hover/focus
-    slider.addEventListener('mouseenter', () => { isUserInteracting = true; });
-    slider.addEventListener('mouseleave', () => { isUserInteracting = false; });
-    slider.addEventListener('focusin', () => { isUserInteracting = true; });
-    slider.addEventListener('focusout', () => { isUserInteracting = false; });
-
-    // Keyboard navigation
-    nav.addEventListener('keydown', (e) => {
-      if (e.key === 'ArrowLeft') {
-        e.preventDefault();
-        goTo(index - 1);
-      } else if (e.key === 'ArrowRight') {
-        e.preventDefault();
-        goTo(index + 1);
-      }
-    });
-
-    restart();
-
-    // Better visibility change handling
-    document.addEventListener('visibilitychange', () => {
-      if (document.hidden) {
-        clearInterval(timer);
-      } else {
-        restart();
-      }
-    });
+    // Auto-play
+    setInterval(() => {
+      currentSlide = (currentSlide + 1) % slides.length;
+      goToSlide(currentSlide);
+    }, 4000);
   });
 });
