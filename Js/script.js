@@ -222,4 +222,33 @@ document.addEventListener("DOMContentLoaded", () => {
       goToSlide(currentSlide);
     }, 4000);
   });
+
+  // Map Toggle Functionality
+  const mapToggles = document.querySelectorAll('.map-toggle');
+  const mapIframe = document.querySelector('.map-wrapper iframe');
+
+  if (mapToggles.length > 0 && mapIframe) {
+    mapToggles.forEach(toggle => {
+      toggle.addEventListener('click', () => {
+        // Remove active class from all toggles
+        mapToggles.forEach(t => t.classList.remove('active'));
+        // Add active class to clicked toggle
+        toggle.classList.add('active');
+
+        // Update map view based on selection
+        const mapType = toggle.getAttribute('data-map');
+        const currentSrc = mapIframe.src;
+
+        if (mapType === 'satellite') {
+          // Switch to satellite view
+          if (!currentSrc.includes('&t=k')) {
+            mapIframe.src = currentSrc + '&t=k';
+          }
+        } else {
+          // Switch to map view
+          mapIframe.src = currentSrc.replace('&t=k', '');
+        }
+      });
+    });
+  }
 });
