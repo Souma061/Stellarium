@@ -189,41 +189,127 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Simple Slider
+  // Fade-Based Slider (Most Reliable)
   const sliders = document.querySelectorAll('[data-slider]');
+
   sliders.forEach(slider => {
     const track = slider.querySelector('.sf-track');
     const slides = track.querySelectorAll('.sf-slide');
     const nav = slider.querySelector('.sf-nav');
 
-    let currentSlide = 0;
+    if (slides.length === 0) return;
 
-    // Create navigation dots
-    slides.forEach((_, i) => {
-      const button = document.createElement('button');
-      if (i === 0) button.classList.add('active');
-      button.addEventListener('click', () => goToSlide(i));
-      nav.appendChild(button);
-    });
+    let currentIndex = 0;
+    let autoPlayInterval;
 
-    function goToSlide(index) {
-      currentSlide = index;
-      track.style.transform = `translateX(-${index * 20}%)`;
+    // Initialize slider with fade approach
+    function initSlider() {
+      // Clear nav
+      nav.innerHTML = '';
 
-      // Update active dot
-      nav.querySelectorAll('button').forEach((btn, i) => {
-        btn.classList.toggle('active', i === index);
+      // Setup track
+      track.style.position = 'relative';
+      track.style.width = '100%';
+      track.style.height = '100%';
+      track.style.overflow = 'hidden';
+
+      // Setup slides with absolute positioning
+      slides.forEach((slide, index) => {
+        slide.style.position = 'absolute';
+        slide.style.top = '0';
+        slide.style.left = '0';
+        slide.style.width = '100%';
+        slide.style.height = '100%';
+        slide.style.opacity = index === 0 ? '1' : '0';
+        slide.style.transition = 'opacity 0.5s ease-in-out';
+        slide.style.zIndex = index === 0 ? '2' : '1';
+
+        // Create nav dot
+        const dot = document.createElement('button');
+        dot.className = 'nav-dot';
+        dot.setAttribute('aria-label', `Go to slide ${index + 1}`);
+        if (index === 0) dot.classList.add('active');
+
+        dot.addEventListener('click', () => showSlide(index));
+        nav.appendChild(dot);
       });
+
+      startAutoPlay();
     }
 
-    // Auto-play
-    setInterval(() => {
-      currentSlide = (currentSlide + 1) % slides.length;
-      goToSlide(currentSlide);
-    }, 4000);
-  });
+    // Show specific slide
+    function showSlide(index) {
+      if (index === currentIndex) return;
 
-  // Map Toggle Functionality
+      // Hide current slide
+      slides[currentIndex].style.opacity = '0';
+      slides[currentIndex].style.zIndex = '1';
+
+      // Show new slide
+      currentIndex = index;
+      slides[currentIndex].style.opacity = '1';
+      slides[currentIndex].style.zIndex = '2';
+
+      // Update navigation
+      nav.querySelectorAll('.nav-dot').forEach((dot, i) => {
+        dot.classList.toggle('active', i === currentIndex);
+      });
+
+      // Restart autoplay
+      stopAutoPlay();
+      startAutoPlay();
+    }
+
+    // Next slide
+    function nextSlide() {
+      const nextIndex = (currentIndex + 1) % slides.length;
+      showSlide(nextIndex);
+    }
+
+    // Auto play
+    function startAutoPlay() {
+      stopAutoPlay();
+      autoPlayInterval = setInterval(nextSlide, 4000);
+    }
+
+    function stopAutoPlay() {
+      if (autoPlayInterval) {
+        clearInterval(autoPlayInterval);
+        autoPlayInterval = null;
+      }
+    }
+
+    // Touch support
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    slider.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+      stopAutoPlay();
+    });
+
+    slider.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      const diff = touchStartX - touchEndX;
+
+      if (Math.abs(diff) > 50) {
+        if (diff > 0) {
+          nextSlide();
+        } else {
+          const prevIndex = (currentIndex - 1 + slides.length) % slides.length;
+          showSlide(prevIndex);
+        }
+      }
+      startAutoPlay();
+    });
+
+    // Pause on hover
+    slider.addEventListener('mouseenter', stopAutoPlay);
+    slider.addEventListener('mouseleave', startAutoPlay);
+
+    // Initialize
+    initSlider();
+  });  // Map Toggle Functionality
   const mapToggles = document.querySelectorAll('.map-toggle');
   const mapIframe = document.querySelector('.map-wrapper iframe');
 

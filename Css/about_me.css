@@ -83,12 +83,12 @@
 /* Inner hero (pink textured background) */
 .inner-hero {
   position: relative;
-  min-height: 420px;
+  min-height: 320px;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 160px 40px 110px;
+  padding: 80px 40px 60px;
   background: url('../Images/hero_inner_about_me.jpg') center top / cover no-repeat;
 }
 
@@ -121,7 +121,7 @@
   }
 
   .inner-hero {
-    padding: 130px 28px 100px;
+    padding: 60px 28px 40px;
   }
 }
 
