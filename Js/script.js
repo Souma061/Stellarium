@@ -42,33 +42,26 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener('scroll', applyScrollState);
   applyScrollState();
 
-  // Enhanced hamburger menu toggle with animations
+  // Simple hamburger menu toggle
   if (toggle && navLinks) {
     toggle.addEventListener('click', (e) => {
       e.preventDefault();
       e.stopPropagation();
 
-      const isActive = navLinks.classList.toggle('active');
-      toggle.classList.toggle('active', isActive);
-      document.body.style.overflow = isActive ? 'hidden' : '';
+      const isActive = navLinks.classList.contains('active');
 
-      // Toggle mobile overlay
-      if (mobileNavOverlay) {
-        mobileNavOverlay.classList.toggle('active', isActive);
-      }
-
-      // Add stagger animation to nav items
       if (isActive) {
-        const navItems = navLinks.querySelectorAll('li');
-        navItems.forEach((item, index) => {
-          item.style.opacity = '0';
-          item.style.transform = 'translateX(-50px)';
-          setTimeout(() => {
-            item.style.transition = 'all 0.5s ease';
-            item.style.opacity = '1';
-            item.style.transform = 'translateX(0)';
-          }, 100 + (index * 100));
-        });
+        // Close menu
+        navLinks.classList.remove('active');
+        toggle.classList.remove('active');
+        if (mobileNavOverlay) mobileNavOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+      } else {
+        // Open menu
+        navLinks.classList.add('active');
+        toggle.classList.add('active');
+        if (mobileNavOverlay) mobileNavOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
       }
     });
 
@@ -82,18 +75,15 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
 
-    // Close mobile menu when clicking close button (the ::after pseudo-element)
+    // Close mobile menu when clicking close button
     navLinks.addEventListener('click', (e) => {
       const rect = navLinks.getBoundingClientRect();
-      const closeButtonArea = {
-        left: rect.right - 70,
-        right: rect.right - 20,
-        top: rect.top + 20,
-        bottom: rect.top + 70
-      };
+      const clickX = e.clientX - rect.left;
+      const clickY = e.clientY - rect.top;
 
-      if (e.clientX >= closeButtonArea.left && e.clientX <= closeButtonArea.right &&
-          e.clientY >= closeButtonArea.top && e.clientY <= closeButtonArea.bottom) {
+      // Close button area (updated position: top: 25px, right: 25px, size: 36px)
+      if (clickX >= rect.width - 61 && clickX <= rect.width - 25 &&
+          clickY >= 25 && clickY <= 61) {
         navLinks.classList.remove('active');
         toggle.classList.remove('active');
         if (mobileNavOverlay) mobileNavOverlay.classList.remove('active');
@@ -101,18 +91,17 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    // Add hover effect to toggle
-    toggle.addEventListener('mouseenter', () => {
-      if (!toggle.classList.contains('active')) {
-        toggle.style.transform = 'scale(1.1)';
-      }
+    // Close when clicking on nav links
+    const navLinksItems = navLinks.querySelectorAll('a');
+    navLinksItems.forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        toggle.classList.remove('active');
+        if (mobileNavOverlay) mobileNavOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+      });
     });
-
-    toggle.addEventListener('mouseleave', () => {
-      if (!toggle.classList.contains('active')) {
-        toggle.style.transform = 'scale(1)';
-      }
-    });
+  }
   }
 
   // Enhanced pages submenu with better animations
