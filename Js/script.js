@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const pagesSubmenu = document.querySelector('.pages-submenu');
   const submenuOverlay = document.querySelector('.submenu-overlay');
 
-  // Create hamburger bars if they don't exist
   if (toggle && toggle.children.length === 0) {
     for (let i = 0; i < 3; i++) {
       const bar = document.createElement('div');
@@ -15,7 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Enhanced header scroll effect with smooth transitions
   let lastScrollY = window.scrollY;
   const applyScrollState = () => {
     const currentScrollY = window.scrollY;
@@ -26,7 +24,6 @@ document.addEventListener("DOMContentLoaded", () => {
       header.classList.remove('scrolled');
     }
 
-    // Auto-hide header on scroll down, show on scroll up
     if (currentScrollY > lastScrollY && currentScrollY > 200) {
       header.style.transform = 'translateY(-100%)';
       header.style.transition = 'transform 0.3s ease';
@@ -41,7 +38,6 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener('scroll', applyScrollState);
   applyScrollState();
 
-  // Enhanced hamburger menu toggle with animations
   if (toggle && navLinks) {
     toggle.addEventListener('click', (e) => {
       e.preventDefault();
@@ -51,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
       toggle.classList.toggle('active', isActive);
       document.body.style.overflow = isActive ? 'hidden' : '';
 
-      // Add stagger animation to nav items
+
       if (isActive) {
         const navItems = navLinks.querySelectorAll('li');
         navItems.forEach((item, index) => {
@@ -66,7 +62,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    // Add hover effect to toggle
     toggle.addEventListener('mouseenter', () => {
       if (!toggle.classList.contains('active')) {
         toggle.style.transform = 'scale(1.1)';
@@ -80,13 +75,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Enhanced pages submenu with better animations
   if (pagesTrigger && pagesSubmenu && submenuOverlay) {
     pagesTrigger.addEventListener('click', (e) => {
       e.preventDefault();
       e.stopPropagation();
 
-      // Close mobile menu if open
       if (navLinks.classList.contains('active')) {
         navLinks.classList.remove('active');
         toggle.classList.remove('active');
@@ -96,7 +89,6 @@ document.addEventListener("DOMContentLoaded", () => {
       submenuOverlay.classList.add('active');
       document.body.style.overflow = 'hidden';
 
-      // Stagger animation for submenu items
       const submenuItems = pagesSubmenu.querySelectorAll('li');
       submenuItems.forEach((item, index) => {
         item.style.opacity = '0';
@@ -109,27 +101,22 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
 
-    // Close submenu function
     const closeSubmenu = () => {
       pagesSubmenu.classList.remove('active');
       submenuOverlay.classList.remove('active');
       document.body.style.overflow = '';
     };
 
-    // Close submenu when clicking overlay
     submenuOverlay.addEventListener('click', closeSubmenu);
 
-    // Close submenu when clicking any link inside
     pagesSubmenu.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         closeSubmenu();
-        // Also close main menu if open
         navLinks.classList.remove('active');
         toggle.classList.remove('active');
       });
     });
 
-    // Close submenu with Escape key
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && pagesSubmenu.classList.contains('active')) {
         closeSubmenu();
@@ -137,7 +124,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Close mobile menu when clicking on regular nav links
   navLinks.querySelectorAll('a:not(.pages-trigger)').forEach(link => {
     link.addEventListener('click', () => {
       navLinks.classList.remove('active');
@@ -146,24 +132,20 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Enhanced outside click handling
   document.addEventListener('click', (e) => {
-    // Close mobile menu when clicking outside
     if (!toggle.contains(e.target) && !navLinks.contains(e.target) && navLinks.classList.contains('active')) {
       navLinks.classList.remove('active');
       toggle.classList.remove('active');
       document.body.style.overflow = '';
     }
 
-    // Close submenu when clicking outside
-    if (pagesSubmenu && !pagesSubmenu.contains(e.target) && !pagesTrigger.contains(e.target) && pagesSubmenu.classList.contains('active')) {
+    if (!pagesTrigger.contains(e.target) && !pagesSubmenu.contains(e.target) && pagesSubmenu.classList.contains('active')) {
       pagesSubmenu.classList.remove('active');
       submenuOverlay.classList.remove('active');
       document.body.style.overflow = '';
     }
   });
 
-  // Enhanced smooth scroll for internal links
   document.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener("click", e => {
       const href = link.getAttribute("href");
@@ -176,7 +158,6 @@ document.addEventListener("DOMContentLoaded", () => {
             block: "start"
           });
 
-          // Close any open menus after navigation
           navLinks.classList.remove('active');
           toggle.classList.remove('active');
           if (pagesSubmenu) {
@@ -189,7 +170,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Fade-Based Slider (Most Reliable)
   const sliders = document.querySelectorAll('[data-slider]');
 
   sliders.forEach(slider => {
@@ -202,18 +182,14 @@ document.addEventListener("DOMContentLoaded", () => {
     let currentIndex = 0;
     let autoPlayInterval;
 
-    // Initialize slider with fade approach
     function initSlider() {
-      // Clear nav
       nav.innerHTML = '';
 
-      // Setup track
       track.style.position = 'relative';
       track.style.width = '100%';
       track.style.height = '100%';
       track.style.overflow = 'hidden';
 
-      // Setup slides with absolute positioning
       slides.forEach((slide, index) => {
         slide.style.position = 'absolute';
         slide.style.top = '0';
@@ -224,7 +200,6 @@ document.addEventListener("DOMContentLoaded", () => {
         slide.style.transition = 'opacity 0.5s ease-in-out';
         slide.style.zIndex = index === 0 ? '2' : '1';
 
-        // Create nav dot
         const dot = document.createElement('button');
         dot.className = 'nav-dot';
         dot.setAttribute('aria-label', `Go to slide ${index + 1}`);
@@ -237,36 +212,30 @@ document.addEventListener("DOMContentLoaded", () => {
       startAutoPlay();
     }
 
-    // Show specific slide
     function showSlide(index) {
       if (index === currentIndex) return;
 
-      // Hide current slide
+
       slides[currentIndex].style.opacity = '0';
       slides[currentIndex].style.zIndex = '1';
 
-      // Show new slide
       currentIndex = index;
       slides[currentIndex].style.opacity = '1';
       slides[currentIndex].style.zIndex = '2';
 
-      // Update navigation
       nav.querySelectorAll('.nav-dot').forEach((dot, i) => {
         dot.classList.toggle('active', i === currentIndex);
       });
 
-      // Restart autoplay
       stopAutoPlay();
       startAutoPlay();
     }
 
-    // Next slide
     function nextSlide() {
       const nextIndex = (currentIndex + 1) % slides.length;
       showSlide(nextIndex);
     }
 
-    // Auto play
     function startAutoPlay() {
       stopAutoPlay();
       autoPlayInterval = setInterval(nextSlide, 4000);
@@ -279,7 +248,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    // Touch support
     let touchStartX = 0;
     let touchEndX = 0;
 
@@ -303,35 +271,27 @@ document.addEventListener("DOMContentLoaded", () => {
       startAutoPlay();
     });
 
-    // Pause on hover
     slider.addEventListener('mouseenter', stopAutoPlay);
     slider.addEventListener('mouseleave', startAutoPlay);
 
-    // Initialize
     initSlider();
-  });  // Map Toggle Functionality
-  const mapToggles = document.querySelectorAll('.map-toggle');
+  });  const mapToggles = document.querySelectorAll('.map-toggle');
   const mapIframe = document.querySelector('.map-wrapper iframe');
 
   if (mapToggles.length > 0 && mapIframe) {
     mapToggles.forEach(toggle => {
       toggle.addEventListener('click', () => {
-        // Remove active class from all toggles
         mapToggles.forEach(t => t.classList.remove('active'));
-        // Add active class to clicked toggle
         toggle.classList.add('active');
 
-        // Update map view based on selection
         const mapType = toggle.getAttribute('data-map');
         const currentSrc = mapIframe.src;
 
         if (mapType === 'satellite') {
-          // Switch to satellite view
           if (!currentSrc.includes('&t=k')) {
             mapIframe.src = currentSrc + '&t=k';
           }
         } else {
-          // Switch to map view
           mapIframe.src = currentSrc.replace('&t=k', '');
         }
       });

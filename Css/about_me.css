@@ -1,4 +1,4 @@
-/* Pages Submenu Styles for About Me Page */
+
 .pages-submenu {
   position: fixed;
   top: 50%;
@@ -78,9 +78,9 @@
   visibility: visible;
 }
 
-/* About Me Page Specific Styles */
 
-/* Inner hero (pink textured background) */
+
+
 .inner-hero {
   position: relative;
   min-height: 320px;
@@ -125,7 +125,7 @@
   }
 }
 
-/* About intro section */
+
 .about-intro {
   padding: 160px 0 140px;
   background: #fff;
@@ -139,7 +139,7 @@
   align-items: flex-start;
   gap: 120px;
   padding: 0 28px;
-  /* reduced horizontal padding */
+  
 }
 
 .about-intro-text {
@@ -157,7 +157,7 @@
   line-height: 1.05;
 }
 
-/* Meta zodiac list */
+
 .about-meta {
   display: flex;
   gap: 42px;
@@ -198,7 +198,7 @@
   letter-spacing: 2.8px;
 }
 
-/* Decorative divider line with dot + arrow */
+
 .about-divider {
   display: flex;
   align-items: center;
@@ -215,12 +215,12 @@
   position: absolute;
   left: 16px;
   right: 6px;
-  /* match slimmer arrow width */
+  
   top: 50%;
   transform: translateY(-50%);
 }
 
-/* Arrow head only (no extra shaft block) */
+
 .about-divider .ad-arrow {
   position: absolute;
   right: 0;
@@ -229,13 +229,13 @@
   width: 0;
   height: 0;
   border-left: 6px solid #111;
-  /* slimmer arrow width */
+  
   border-top: 3px solid transparent;
-  /* slimmer arrow height */
+  
   border-bottom: 3px solid transparent;
 }
 
-/* Dot style (absolute for consistent spacing) */
+
 .about-divider .ad-dot {
   position: absolute;
   left: 0;
@@ -247,7 +247,7 @@
   border-radius: 50%;
 }
 
-/* Social icons row */
+
 .about-social {
   display: flex;
   gap: 16px;
@@ -293,7 +293,7 @@
   letter-spacing: 0.1px;
 }
 
-/* Social icons row */
+
 .about-social {
   display: flex;
   gap: 18px;
@@ -341,7 +341,7 @@
   display: block;
 }
 
-/* Chart Section */
+
 .chart-section {
   padding: 140px 0 0px;
   background: #F6F6F5;
@@ -352,7 +352,7 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 28px;
-  /* reduced */
+  
 }
 
 .chart-header {
@@ -361,12 +361,12 @@
   max-width: none;
 }
 
-/* Chart description paragraphs side-by-side (desktop) */
+
 .chart-description-text {
   display: grid;
   grid-template-columns: repeat(2, minmax(280px, 1fr));
   gap: 38px 70px;
-  /* row gap, column gap */
+  
   margin: 0 0 78px;
   font-family: 'Montserrat', sans-serif;
 }
@@ -391,7 +391,7 @@
   text-align: left;
 }
 
-/* Slimmer divider under chart title (matches provided reference) */
+
 .chart-title-divider {
   position: relative;
   width: 210px;
@@ -405,7 +405,7 @@
   position: absolute;
   left: 16px;
   right: 6px;
-  /* match slimmer arrow width */
+  
   top: 50%;
   transform: translateY(-50%);
 }
@@ -422,7 +422,7 @@
   border-bottom: 3px solid transparent;
 }
 
-/* Missing dot style */
+
 .chart-title-divider .chart-dot {
   position: absolute;
   left: 0;
@@ -434,7 +434,7 @@
   border-radius: 50%;
 }
 
-/* (Removed early duplicate follow ornament styles to avoid conflicts) */
+
 
 .chart-content {
   display: flex;
@@ -473,7 +473,7 @@
   z-index: 2;
 }
 
-/* Standard hover swap (only when not using always-both variant) */
+
 .chart-image-wrapper:not(.always-both):hover .chart-base {
   opacity: 0;
 }
@@ -482,27 +482,27 @@
   opacity: 1;
 }
 
-/* Always-both variant: Service-2over overlay sits above cloudy base; fades out on hover */
+
 .chart-section .chart-image-wrapper.always-both .chart-base {
-  /* cloudy chart always visible as base */
+  
   opacity: 1;
 }
 
 .chart-section .chart-image-wrapper.always-both .chart-overlay {
-  /* Service-2over overlay visible initially */
+  
   opacity: 1;
   transition: opacity 0.6s ease;
 }
 
-/* On hover: KEEP cloudy base visible, fade out Service-2over overlay */
+
 .chart-section .chart-image-wrapper.always-both:hover .chart-base {
   opacity: 1;
-  /* Cloudy base stays visible */
+  
 }
 
 .chart-section .chart-image-wrapper.always-both:hover .chart-overlay {
   opacity: 0;
-  /* Service-2over overlay disappears on hover */
+  
 }
 
 
@@ -646,7 +646,7 @@
 
   .chart-description-text {
     display: flex;
-    /* override desktop grid */
+    
     flex-direction: column;
     gap: 24px;
     margin-bottom: 80px;
@@ -728,7 +728,7 @@
   }
 }
 
-/* (Removed old flex-based about-divider variant to keep absolute-positioned arrow style) */
+
 
 @media (max-width:640px) {
   .page-title {
@@ -799,7 +799,7 @@
   }
 }
 
-/* Book a Reading Section */
+
 .book-reading-section {
   padding: 140px 0 160px;
   background: #fff;
@@ -810,7 +810,7 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 28px;
-  /* reduced */
+  
 }
 
 .book-reading-content {
@@ -924,7 +924,7 @@
   z-index: 2;
 }
 
-/* Reading chart hover effect */
+
 .reading-chart-wrapper.always-both-reading .reading-chart-base {
   opacity: 1;
 }
@@ -1027,7 +1027,7 @@
   }
 }
 
-/* ================= Follow Us Section ================= */
+
 .follow-section {
   position: relative;
   background: #fff url('../Images/grey_sparkle_02.jpg') center top repeat-y;
@@ -1040,7 +1040,7 @@
   max-width: 1320px;
   margin: 0 auto;
   padding: 0 40px;
-  /* reduced */
+  
 }
 
 .follow-planets img {
@@ -1060,7 +1060,7 @@
   letter-spacing: -.4px;
 }
 
-/* Decorative line under title */
+
 .follow-ornament {
   position: relative;
   width: 220px;
@@ -1105,7 +1105,7 @@
   transition: border-left-color .35s ease;
 }
 
-/* Enhanced Social icons */
+
 .social-list {
   list-style: none;
   padding: 0;
@@ -1173,7 +1173,7 @@
   outline-offset: 6px;
 }
 
-/* Hover effects for follow ornament arrow */
+
 .follow-ornament:hover .arrow {
   background: #7f3fbf;
   width: 150px;
@@ -1187,7 +1187,7 @@
   border-left-color: #7f3fbf;
 }
 
-/* Ornament hover when hovering any social icon */
+
 .social-list:hover ~ .follow-ornament .arrow {
   background: #7f3fbf;
   width: 150px;
@@ -1201,7 +1201,7 @@
   border-left-color: #7f3fbf;
 }
 
-/* Enhanced Responsive Design for About Me Follow Section */
+
 @media (max-width: 1100px) {
   .follow-title {
     font-size: 58px;
@@ -1390,15 +1390,15 @@
   }
 }
 
-/* Minimal placeholder sections to satisfy anchors (can be removed when real sections exist) */
+
 .placeholder-section {
   height: 1px;
   overflow: hidden;
 }
 
-/* ============ Universal Arrow Styling (Horoscope-inspired) ============ */
 
-/* Feature Row Arrows (Large) */
+
+
 .fr-arrow {
   display: flex;
   align-items: center;
@@ -1440,7 +1440,7 @@
   transition: border-left-color .35s ease;
 }
 
-/* Hover effects for feature arrows */
+
 .fr-content:hover .fr-arrow .arrow,
 .article-content:hover .fr-arrow .arrow {
   background: #7f3fbf;
@@ -1457,7 +1457,7 @@
   border-left-color: #7f3fbf;
 }
 
-/* Main Article Arrows (Medium-Large) */
+
 .main-article-arrow {
   display: flex;
   align-items: center;
@@ -1499,7 +1499,7 @@
   transition: border-left-color .35s ease;
 }
 
-/* Hover effects for main article arrows */
+
 .main-article-right:hover .main-article-arrow .arrow,
 .article-content:hover .main-article-arrow .arrow {
   background: #7f3fbf;
@@ -1516,7 +1516,7 @@
   border-left-color: #7f3fbf;
 }
 
-/* Sidebar Arrows (Small) */
+
 .sidebar-arrow {
   display: flex;
   align-items: center;
@@ -1558,7 +1558,7 @@
   transition: border-left-color .35s ease;
 }
 
-/* Hover effects for sidebar arrows */
+
 .sidebar-item:hover .sidebar-arrow .arrow {
   background: #7f3fbf;
   width: 95px;
@@ -1572,7 +1572,7 @@
   border-left-color: #7f3fbf;
 }
 
-/* Generic Arrow Container (Most flexible) */
+
 .arrow-container {
   display: flex;
   align-items: center;
@@ -1614,7 +1614,7 @@
   transition: border-left-color .35s ease;
 }
 
-/* Hover effects for generic arrow container */
+
 .arrow-container:hover .arrow {
   background: #7f3fbf;
   width: 110px;
