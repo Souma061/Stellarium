@@ -2041,3 +2041,34 @@ body.blog-page {
     }
   }
 }
+
+/* Header Hover Effects */
+.main-article-title:hover {
+  color: #8b5cf6;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.fr-title:hover {
+  color: #8b5cf6;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.sidebar-featured-title:hover {
+  color: #8b5cf6;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.sidebar-title:hover {
+  color: #8b5cf6;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.follow-title:hover {
+  color: #8b5cf6;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
