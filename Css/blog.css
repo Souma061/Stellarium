@@ -871,6 +871,39 @@ body.blog-page {
   padding: 25px 30px;
   gap: 20px;
   transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.sidebar-item--linked {
+  padding: 0;
+}
+
+.sidebar-item-link {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  padding: 25px 30px;
+  color: inherit;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar-item-link:hover {
+  color: inherit;
+}
+
+.sidebar-item-link:focus-visible {
+  outline: 2px solid #7f3fbf;
+  outline-offset: 4px;
+}
+
+.sidebar-item--linked:hover {
+  background: transparent;
+}
+
+.sidebar-item--linked:hover .sidebar-item-link {
+  background: #fff;
 }
 
 .sidebar-item:hover {
